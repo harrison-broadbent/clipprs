@@ -1,0 +1,3 @@
+- what if you know 2 people with the identical name??
+  - John smith 1
+  - John smith 2
