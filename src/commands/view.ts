@@ -1,6 +1,8 @@
 import {Command, flags} from '@oclif/command'
 import {initializeDB, addEntryDB, getAllDataDB} from '../db-manager'
-import { PERSON_TEMPLATE } from '../definitions'
+import { DEFAULT_TEMPLATE_PERSON } from '../templates'
+import { integer } from '@oclif/command/lib/flags'
+
 
 export default class View extends Command {
   static description = 'describe the command here'
@@ -12,19 +14,27 @@ export default class View extends Command {
   // static args = []
 
   async run() {
-    // const {args, flags} = this.parse(View)
-    initializeDB(this)
-    // initialize data if this is the first run
-    // see db-manager.ts for these
+    //// DATABASE ////
+    // initialize db    
+    const low = require('lowdb')
+    const FileSync = require('lowdb/adapters/FileSync')
+    const adapter = new FileSync('cliprs_db.json')
+    const db = low(adapter)
 
-    const dbData = getAllDataDB()
-    this.log(dbData.people)
-    for (let person of dbData.people) {
-      this.log(person, typeof person)
-      for (const [key, value] of Object.entries(person)) {
-        this.log(`${key} : ${value}`)
+    // setup defaults //
+    db.defaults({people: [], count: 0 })
+    .write()
+
+    //// \DATABASE ////
+
+    const dbData =  db.get('people')
+                      .value()
+    for (let person of dbData) {
+      let output = ""
+      for (let key of Object.keys(person)) {
+        output += `${key} : ${person[key]} | `
       }
-      this.log('\n')
+      this.log(output)
     }
 
   }

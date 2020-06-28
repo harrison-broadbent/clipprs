@@ -1,6 +1,6 @@
 import {Command, flags} from '@oclif/command'
 import {initializeDB, addEntryDB, getAllDataDB} from '../db-manager'
-import { PERSON_TEMPLATE } from '../definitions'
+import { DEFAULT_TEMPLATE_PERSON } from '../templates'
 import { integer } from '@oclif/command/lib/flags'
 
 // import {DB_PATH} from '../definitions'
@@ -17,7 +17,7 @@ export default class New extends Command {
     force: flags.boolean({char: 'f'}),
   }
 
-  static args = [{name: 'file'}]
+  static args = [{name: ''}]
 
   async run() {
     //// DATABASE ////
@@ -34,21 +34,27 @@ export default class New extends Command {
     //// \DATABASE ////
 
     const {args, flags} = this.parse(New)
+    let newPerson = DEFAULT_TEMPLATE_PERSON
+    const name = flags.name
 
-    let newPerson = PERSON_TEMPLATE
-    const name = flags.name ?? ''
-
-    newPerson["First Name"] = name
+    if (typeof name === 'string') {
+      newPerson["First Name"] = name
     
-    db.get('people')
-      .push(newPerson)
-      .write()
-
-    db.update('count', (n: number) => n + 1)
-      .write()
-
-    this.log(db.get('people'))
-    this.log(newPerson.toString())
+      db.get('people')
+        .push(newPerson)
+        .write()
+  
+      db.update('count', (n: number) => n + 1)
+        .write()
+  
+      this.log(db.get('people'))
+      this.log(newPerson.toString())  
+    } else {
+      this.log(`
+        ERROR:  Name is empty
+        >>>     Please input a name using -n [NAME]
+      `)
+    }
 
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)

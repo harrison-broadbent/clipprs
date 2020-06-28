@@ -1,4 +1,8 @@
 import {Command, flags} from '@oclif/command'
+import {initializeDB, addEntryDB, getAllDataDB} from '../db-manager'
+import { DEFAULT_TEMPLATE_PERSON } from '../templates'
+import { integer } from '@oclif/command/lib/flags'
+
 
 export default class Search extends Command {
   static description = 'describe the command here'
