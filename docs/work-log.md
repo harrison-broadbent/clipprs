@@ -1,11 +1,13 @@
 --- 2020-07-06 21:33 ---
 	- implemented deletion of entries within the search command
 		- created a confirmation prompt to double check, not sure if thats necessary though or if it is more seamless to just auto-delete. Actually, thats probably a bad idea...
-		- it would be cool to prompt the users to put the db under version control or something incase something happens - and then ex. commit the changes after each change.
+		? it would be cool to prompt the users to put the db under version control or something incase something happens - and then ex. commit the changes after each change.
+		- added a view command using cli3 or smt...
+			? maybe colour in the firstname and lastname colums to differentiate them.
 
 
 --- 2020-07-05 10:33 --- 
-	- it would be cool if instead of closing an entry, we return to the search field
+	? it would be cool if instead of closing an entry, we return to the search field
 	- no further luck in my SO post... nor my emails....
 	- after accidentally deleting the DB, we can now edit entries...
 	- use console.error rather than this.error (only the first works ???)

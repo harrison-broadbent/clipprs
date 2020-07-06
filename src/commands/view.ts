@@ -2,6 +2,7 @@
 import {Command, flags} from '@oclif/command'
 import {DEFAULT_TEMPLATE_PERSON} from '../templates'
 import {integer} from '@oclif/command/lib/flags'
+const Table = require('cli-table3')
 
 export default class View extends Command {
   static description = 'describe the command here'
@@ -26,14 +27,33 @@ export default class View extends Command {
 
     /// \DATABASE ///
 
-    const dbData =  db.get('people')
+    const dbData = db.get('people')
     .value()
+
+    // Auto-generate the table by going through every person and adding their keys in
+    let headValues = []
     for (const person of dbData) {
-      let output = ''
-      for (const key of Object.keys(person)) {
-        output += `${key} : ${person[key]} | `
-      }
-      this.log(output)
+      headValues = headValues.concat(Object.keys(person))
     }
+    // remove duplicates by using the Set() type
+    // and then converting back to array
+    headValues = [...(new Set(headValues))]
+    this.log(headValues)
+    const table = new Table({head: headValues})
+
+    // populate the table with either "" or the corresponding value.
+    for (const person of dbData) {
+      const entry = []
+      for (const key of headValues) {
+        if (person[key]) {
+          entry.push(person[key])
+        } else {
+          entry.push(' ')
+        }
+      }
+      table.push(entry)
+    }
+    this.log(table)
+    this.log(table.toString())
   }
 }
