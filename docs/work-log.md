@@ -1,3 +1,23 @@
+--- 2020-07-06 21:33 ---
+	- implemented deletion of entries within the search command
+		- created a confirmation prompt to double check, not sure if thats necessary though or if it is more seamless to just auto-delete. Actually, thats probably a bad idea...
+		- it would be cool to prompt the users to put the db under version control or something incase something happens - and then ex. commit the changes after each change.
+
+
+--- 2020-07-05 10:33 --- 
+	- it would be cool if instead of closing an entry, we return to the search field
+	- no further luck in my SO post... nor my emails....
+	- after accidentally deleting the DB, we can now edit entries...
+	- use console.error rather than this.error (only the first works ???)
+	
+
+
+--- 2020-07-04 19:31 ---
+	- create an edit function using the 'select' prompt
+	- spent a lot of time trying to do something smart with searching the databse, decided to just search for the matching first and last name instead using .filter()
+	- posted on stackoverflow and emailed some people for help with custom form prompt as well...
+
+
 --- 2020-07-03 23:04 ---
 	- bit of a setback with the custom input, struggling to figure out how to implement the blank:blank form. 
 	- going to move on and come back to that: 
