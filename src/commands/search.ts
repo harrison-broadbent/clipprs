@@ -6,7 +6,7 @@ import {format} from 'path'
 import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {Interface} from 'readline'
 
-const {AutoComplete, Select, Form, Confirm} = require('enquirer')
+const {AutoComplete, Select, Form, Confirm} = require('cliprs-enquirer')
 
 /// DATABASE ///
 // initialize db

@@ -4,7 +4,7 @@ import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {integer} from '@oclif/command/lib/flags'
 import {format} from 'path'
 
-const {Form, Select} = require('enquirer')
+const {Form, Select} = require('cliprs-enquirer')
 
 /// DATABASE ///
 // initialize db
