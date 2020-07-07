@@ -4,7 +4,9 @@ import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {integer} from '@oclif/command/lib/flags'
 import {format} from 'path'
 
-const {Form, Select} = require('cliprs-enquirer')
+import {requiredFields} from '../definitions'
+
+const {Form, Select, Editable} = require('cliprs-enquirer')
 
 /// DATABASE ///
 // initialize db
@@ -19,15 +21,16 @@ db.defaults({people: [], count: 0})
 /// \DATABASE ///
 
 // dynamically generate prompt from template
-const newPersonPrompt = new Form({
+const newPersonPrompt = new Editable({
   name: 'new-entry',
   message: 'Clip a new person into your system - ',
   choices: () => {
     const prompt_choices = []
     for (const key of Object.keys(DEFAULT_TEMPLATE_PERSON)) {
-      const promptTemplate = Object.create(PROMPT_TEMPLATE)
+      const promptTemplate = JSON.parse(JSON.stringify(PROMPT_TEMPLATE))
       promptTemplate.name = key
       promptTemplate.message = key
+      promptTemplate.required = requiredFields.includes(key)
       prompt_choices.push(promptTemplate)
     }
     // prompt_choices.push(BLANK_INPUT_TEMPLATE)

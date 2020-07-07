@@ -10,6 +10,8 @@ export const PROMPT_TEMPLATE = {
   name: '',
   message: '',
   initial: '',
+  editable: true,
+  required: undefined,
   result(value: any) {
     return value.trim()
   },

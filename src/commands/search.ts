@@ -51,15 +51,18 @@ function editPerson(entry: object) {
   })
   editPersonPrompt.run()
   .then((editedEntry: object) => {
-    // db.update('people', (peopleArray: object[]) => {
-    //   // update the db entry with the new data
-    //   peopleArray[dbIndex] = editOutput
-    // })
-    // .write()
+    console.log(editedEntry)
     db.get('people')
-    .find(entry)
-    .assign(editedEntry)
+    .remove(entry)
     .write()
+
+    db.get('people')
+    .push(editedEntry)
+    .write()
+    // db.get('people')
+    // .find(entry)
+    // .assign(editedEntry)
+    // .write()
   })
 }
 

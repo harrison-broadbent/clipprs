@@ -9,6 +9,12 @@
 		- created a fork of enquirer called 'cliprs-enquirer'. 
 			- currently this adds the ability to remove non-required fields from an Editable using ctrl+r, with ctrl+n used to add elements. 
 
+	--- 22:40 ---
+		- solid effort today
+		- have a bug though where Object.create(Template) is creating an empty object in new.js
+		- fixed it by using json.parse(json.stringify(template)) rather than object.create(template)
+		- [ ] todo - add view and view -a options
+
 
 --- 2020-07-06 21:33 ---
 	- implemented deletion of entries within the search command
