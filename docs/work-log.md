@@ -1,13 +1,19 @@
+--- 2020-07-07 19:45 ---
+	- YES! Received an answer to my stackoverflow question from one of the people I emailed - doowb - and it looks promising. 
+	?? - add a bio fields as required (limit it to the size of a tweet - 120 / 240 chars)
+	?? - cliprs view should show shortened view (fName, lName, bio, DOB, X additional fields...) & cliprs view -a / --all should show all fields (like it currently does automatically).
+
+
 --- 2020-07-06 21:33 ---
 	- implemented deletion of entries within the search command
 		- created a confirmation prompt to double check, not sure if thats necessary though or if it is more seamless to just auto-delete. Actually, thats probably a bad idea...
-		? it would be cool to prompt the users to put the db under version control or something incase something happens - and then ex. commit the changes after each change.
-		- added a view command using cli3 or smt...
+		?? it would be cool to prompt the users to put the db under version control or something incase something happens - and then ex. commit the changes after each change.
+		- added a view command using cli-table3
 			? maybe colour in the firstname and lastname colums to differentiate them.
 
 
 --- 2020-07-05 10:33 --- 
-	? it would be cool if instead of closing an entry, we return to the search field
+	?? it would be cool if instead of closing an entry, we return to the search field
 	- no further luck in my SO post... nor my emails....
 	- after accidentally deleting the DB, we can now edit entries...
 	- use console.error rather than this.error (only the first works ???)
