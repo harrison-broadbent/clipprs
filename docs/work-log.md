@@ -1,7 +1,13 @@
---- 2020-07-07 19:45 ---
+--- 2020-07-07 ---
+	--- 19:45 ---
+
 	- YES! Received an answer to my stackoverflow question from one of the people I emailed - doowb - and it looks promising. 
 	?? - add a bio fields as required (limit it to the size of a tweet - 120 / 240 chars)
 	?? - cliprs view should show shortened view (fName, lName, bio, DOB, X additional fields...) & cliprs view -a / --all should show all fields (like it currently does automatically).
+	
+	--- 21:42 ---
+		- created a fork of enquirer called 'cliprs-enquirer'. 
+			- currently this adds the ability to remove non-required fields from an Editable using ctrl+r, with ctrl+n used to add elements. 
 
 
 --- 2020-07-06 21:33 ---

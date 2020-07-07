@@ -6,7 +6,8 @@ import {format} from 'path'
 import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {Interface} from 'readline'
 
-const {AutoComplete, Select, Form, Confirm} = require('cliprs-enquirer')
+const {AutoComplete, Select, Form, Confirm, Editable} = require('cliprs-enquirer')
+import {requiredFields} from '../definitions'
 
 /// DATABASE ///
 // initialize db
@@ -25,9 +26,11 @@ function editPerson(entry: object) {
     name: string;
     message: string;
     initial: string;
+    editable: boolean;
+    required: boolean;
   }
 
-  const editPersonPrompt = new Form({
+  const editPersonPrompt = new Editable({
     name: 'edit-entry',
     message: 'Edit a Clip - ',
     choices: () => {
@@ -38,6 +41,8 @@ function editPerson(entry: object) {
           name: key,
           message: key,
           initial: entry[key],
+          editable: true,
+          required: requiredFields.includes(key),
         }
         prompt_choices.push(field)
       }
