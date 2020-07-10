@@ -7,4 +7,10 @@
 /tmp
 node_modules
 
+.editorconfig
+.eslintignore
+.eslintrc
+yarn-lock
+tsconfig.json
+
 cliprs_db.json
