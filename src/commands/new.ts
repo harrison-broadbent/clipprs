@@ -23,7 +23,7 @@ db.defaults({people: [], count: 0})
 // dynamically generate prompt from template
 const newPersonPrompt = new Editable({
   name: 'new-entry',
-  message: 'Clip a new person into your system - ',
+  message: 'Add a person to your Clips - ',
   choices: () => {
     const prompt_choices = []
     for (const key of Object.keys(DEFAULT_TEMPLATE_PERSON)) {

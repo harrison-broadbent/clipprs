@@ -1,3 +1,12 @@
+--- 2020-07-08 21:01 ---
+	? add an erase command - cliprs erase - to clear out db?
+	? think of changing the name to clipers or clippers or clipprs
+	- added view and view -a distinction
+	- styled table and it looks pretty good!
+		- [ ] work on what to do when content > width of screen
+			? maybe truncate and then have a full view option in the search -> person entry
+
+
 --- 2020-07-07 ---
 	--- 19:45 ---
 

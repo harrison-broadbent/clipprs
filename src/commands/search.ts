@@ -2,12 +2,13 @@
 import {Command, flags} from '@oclif/command'
 import {integer, string} from '@oclif/command/lib/flags'
 import {format} from 'path'
-
-import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {Interface} from 'readline'
 
+import {requiredFields, columnWidth, defaultMaxColumns} from '../definitions'
+import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
+
 const {AutoComplete, Select, Form, Confirm, Editable} = require('cliprs-enquirer')
-import {requiredFields} from '../definitions'
+const Table = require('cli-table3')
 
 /// DATABASE ///
 // initialize db
@@ -66,10 +67,10 @@ function editPerson(entry: object) {
   })
 }
 
-const editDeleteClose = new Select({
+const viewEditDeleteClose = new Select({
   name: '',
   message: '',
-  choices: ['Edit', 'Delete', 'Close'],
+  choices: ['View', 'Edit', 'Delete', 'Close'],
 })
 
 const confirmDeletePrompt = new Confirm({
@@ -80,7 +81,7 @@ const confirmDeletePrompt = new Confirm({
 // dynamically generate prompt from template
 const searchPrompt = new AutoComplete({
   name: 'search-entry',
-  message: 'Search through your Clips - ',
+  message: 'Search and edit your Clips - ',
   choices: () => {
     const prompt_choices = []
     const dbData = db.get('people').value()
@@ -114,15 +115,26 @@ export default class New extends Command {
       .find({'First Name': firstName, 'Last Name': lastName})
       .value()
 
-      this.log(entry)
-
-      editDeleteClose.run()
+      viewEditDeleteClose.run()
       .then((answer: string) => {
-        if (answer === 'Edit') {
-          // EDIT the user by displaying a form
+        // VIEW
+        if (answer === 'View') {
+          // widen colWidth as we are only displaying 2 colums
+          const table = new Table({wordWrap: true, colWidths: [columnWidth * 1.5, columnWidth * 1.5]})
+          const keys = Object.keys(entry)
+
+          for (const key of keys) {
+            // use es6 computed name properties
+            table.push({
+              [key]: entry[key],
+            })
+          }
+          this.log(table.toString())
+        // EDIT
+        } else if (answer === 'Edit') {
           editPerson(entry)
+        // DELETE
         } else if (answer === 'Delete') {
-          // DELETE the user
           confirmDeletePrompt.run()
           .then((answer: any) => {
             if (answer === true) {
@@ -137,6 +149,7 @@ export default class New extends Command {
               this.log('Cancelling deletion.')
             }
           })
+        // CLOSE
         } else if (answer === 'Close') {
           // CLOSE
           // instead of closing, we could return to the search field
