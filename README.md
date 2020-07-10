@@ -25,6 +25,9 @@
     ┌────────────────┬────────────────┬────────────────┬────────────────┐
     │ First Name     │ Last Name      │ Birthday       │ Bio            │
     ├────────────────┼────────────────┼────────────────┼────────────────┤
+    │ Steve          │ Austin         │ ???            │ He is stone    │
+    │                │                │                │ cold.          │
+    ├────────────────┼────────────────┼────────────────┼────────────────┤
     │ Harrison       │ Broadbent      │ 21-02-2002     │ Engineering    │
     │                │                │                │ student, likes │
     │                │                │                │ to run and     │
@@ -39,19 +42,19 @@
 
   This will attempt to show you the the value of each entry for all the fields in your database, with blanks used to show an undefined field, ie - 
 
-    ┌────────────────┬────────────────┬────────────────┬────────────────┬────────────────┐
-    │ First Name     │ Last Name      │ Birthday       │ Bio            │ Favourite      │
-    │                │                │                │                │ Colour         │
-    ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    │ Steve          │ Austin         │ ???            │ He is stone    │                │
-    │                │                │                │ cold.          │                │
-    ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    │ Harrison       │ Broadbent      │ 21-02-2002     │ Engineering    │ Teal           │
-    │                │                │                │ student, likes │                │
-    │                │                │                │ to run and     │                │
-    │                │                │                │ code, eats a   │                │
-    │                │                │                │ lot.           │                │
-    └────────────────┴────────────────┴────────────────┴────────────────┴────────────────┘
+      ┌────────────────┬────────────────┬────────────────┬────────────────┬────────────────┐
+      │ First Name     │ Last Name      │ Birthday       │ Bio            │ Favourite      │
+      │                │                │                │                │ Colour         │
+      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
+      │ Steve          │ Austin         │ ???            │ He is stone    │                │
+      │                │                │                │ cold.          │                │
+      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
+      │ Harrison       │ Broadbent      │ 21-02-2002     │ Engineering    │ Carolina blue  │
+      │                │                │                │ student, likes │                │
+      │                │                │                │ to run and     │                │
+      │                │                │                │ code, eats a   │                │
+      │                │                │                │ lot.           │                │
+      └────────────────┴────────────────┴────────────────┴────────────────┴────────────────┘
 
   If the table containing all the fields in the database is too wide for the terminal however, the table will be truncated and only show a portion of all the fields. 
 
@@ -74,10 +77,10 @@
       Delete
       Close
 
-  - View: Shows an extended view of *all* fields for a given entry.
-  - Edit: Allows you to edit the entry, add and remove fields etc.
-  - Delete: Deletes an entry after confirmation.
-  - Close: Closes the dialogue.
+  - **View**: Shows an extended view of *all* fields for a given entry.
+  - **Edit**: Allows you to edit the entry, add and remove fields etc.
+  - **Delete**: Deletes an entry after confirmation.
+  - **Close**: Closes the dialogue.
 
 ### Erase
   - You can erase your database of clips using - 
@@ -92,7 +95,7 @@
   - At any time, you can get help using - 
     
         > clipprs help  
-
-        // OR
         
+        // OR
+
         > clipprs help [command]
