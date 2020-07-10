@@ -1,18 +1,20 @@
 {
-  "name": "cliprs",
+  "name": "clipprs",
   "description": "CLI Personal Relations System",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Harrison Broadbent @harrison-broadbent",
   "bin": {
     "cliprs": "./bin/run"
   },
-  "bugs": "https://github.com/harrison-broadbent/cliprs/issues",
+  "bugs": {
+    "url": "https://github.com/harrison-broadbent/clipprs/issues"
+  },
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
     "cli-table3": "^0.6.0",
-    "cliprs-enquirer": "^2.3.6-0.0.1",
+    "clipprs-enquirer": "^2.3.6-0.0.1",
     "lowdb": "^1.0.0",
     "tslib": "^1"
   },
@@ -35,9 +37,12 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/harrison-broadbent/cliprs",
+  "homepage": "https://github.com/harrison-broadbent/clipprs",
   "keywords": [
-    "oclif"
+    "oclif",
+    "cli",
+    "pkm",
+    "knowledge-management"
   ],
   "license": "MIT",
   "main": "lib/index.js",
@@ -48,7 +53,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "harrison-broadbent/cliprs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrison-broadbent/clipprs.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
@@ -56,5 +64,9 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  }
 }

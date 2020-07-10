@@ -6,7 +6,7 @@ import {format} from 'path'
 
 import {requiredFields} from '../definitions'
 
-const {Form, Select, Editable} = require('cliprs-enquirer')
+const {Form, Select, Editable} = require('clipprs-enquirer')
 
 /// DATABASE ///
 // initialize db

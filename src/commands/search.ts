@@ -7,7 +7,7 @@ import {Interface} from 'readline'
 import {requiredFields, columnWidth, defaultMaxColumns} from '../definitions'
 import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 
-const {AutoComplete, Select, Form, Confirm, Editable} = require('cliprs-enquirer')
+const {AutoComplete, Select, Form, Confirm, Editable} = require('clipprs-enquirer')
 const Table = require('cli-table3')
 
 /// DATABASE ///
@@ -26,7 +26,7 @@ function editPerson(entry: object) {
   interface Field {
     name: string;
     message: string;
-    initial: string;
+    initial: any;
     editable: boolean;
     required: boolean;
   }

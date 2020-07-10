@@ -1,3 +1,18 @@
+--- 2020-07-10 14:33 --- 
+	- Updated readme and pushed to github. 
+	- [ ] publish on npm
+	? add a clipprs setup command.
+		- change db location 
+		- change colwidths value
+		- change default template
+	? add clipprs templates command.
+		- create and edit templates
+		? the to create a new clip you can go:
+			- clipprs new [template-name]
+			- clipprs new general, clipprs new friend, clipprs new workmate, clipprs new pet etc.
+			- retain clipprs new without any args as the default.
+
+
 --- 2020-07-08 21:01 ---
 	? add an erase command - cliprs erase - to clear out db?
 	? think of changing the name to clipers or clippers or clipprs

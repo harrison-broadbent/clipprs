@@ -3,7 +3,7 @@ import {Command, flags} from '@oclif/command'
 import {integer} from '@oclif/command/lib/flags'
 import {format} from 'path'
 
-const {Confirm} = require('cliprs-enquirer')
+const {Confirm} = require('clipprs-enquirer')
 
 /// DATABASE ///
 // initialize db

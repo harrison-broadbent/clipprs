@@ -484,10 +484,10 @@ cli-width@^2.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.1.tgz#b0433d0b4e9c847ef18868a4ef16fd5fc8271c48"
   integrity sha512-GRMWDxpOB6Dgk2E5Uo+3eEBvtOOlimMmpbFiKuLFnQzYDavtLFY3K5ona41jgN/WdRZtG7utuVSVTL4HbZHGkw==
 
-cliprs-enquirer@^2.3.6-0.0.1:
+clipprs-enquirer@^2.3.6-0.0.1:
   version "2.3.6-0.0.1"
-  resolved "https://registry.yarnpkg.com/cliprs-enquirer/-/cliprs-enquirer-2.3.6-0.0.1.tgz#c97d9c831c313b7e5f8dbb2dabf6ba1a2b908fa0"
-  integrity sha512-y5UCpnxbfLE49ArY/Qwr34sZoMLSV6B6aM0Sy1zm4KJ9SUmiq10/vteuHP4Iu9c0vWBHUkcPC076NhDcsa85ag==
+  resolved "https://registry.yarnpkg.com/clipprs-enquirer/-/clipprs-enquirer-2.3.6-0.0.1.tgz#15a46133332340ad432f94e6611350fb58ea6344"
+  integrity sha512-7pJ00qGEPJFqmglT0udHzzYIS/qOvbMkiwsE1XyHsChrDWiXBB3m3jxeRDp1W1rxsjj/64gGK75VN8kGis94gg==
   dependencies:
     ansi-colors "^4.1.1"
 
