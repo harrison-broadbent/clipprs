@@ -22,7 +22,7 @@ export default class View extends Command {
     // initialize db
     const low = require('lowdb')
     const FileSync = require('lowdb/adapters/FileSync')
-    const adapter = new FileSync('cliprs_db.json')
+    const adapter = new FileSync('clipprs_db.json')
     const db = low(adapter)
 
     // setup defaults //
@@ -36,7 +36,7 @@ export default class View extends Command {
     const dbData = db.get('people')
     .value()
 
-    // we can use the all flag to show every property for every obj - cliprss view -a
+    // we can use the all flag to show every property for every obj - clipprss view -a
     // we dont do this by default though as there are many blank spaces
     // by default we just show fName, lName, DOB and bio
     let headValues: string[] = []
@@ -62,17 +62,22 @@ export default class View extends Command {
     const columnWidths = new Array(headValues.length).fill(columnWidth)
     const table = new Table({head: headValues, wordWrap: true, colWidths: columnWidths})
 
-    // populate the table with either "" or the corresponding value.
-    for (const person of dbData) {
-      const entry = []
-      for (const key of headValues) {
-        if (person[key]) {
-          entry.push(person[key])
-        } else {
-          entry.push(' ')
+    if (dbData.length > 0) {
+      // populate the table with either "" or the corresponding value.
+      for (const person of dbData) {
+        const entry = []
+        for (const key of headValues) {
+          if (person[key]) {
+            entry.push(person[key])
+          } else {
+            entry.push(' ')
+          }
         }
+        table.push(entry)
       }
-      table.push(entry)
+    } else {
+      table.push([])
+      this.log('No data found. Run clipprs new to add a clip, or clipprs setup to link to an older database.')
     }
     this.log(table.toString())
   }

@@ -1,7 +1,13 @@
-# CLIPPRS - CLI Personal Relations System
+# Clipprs - CLI Personal Relations System
   - this is not ready for an initial release yet!
 
-## Quickstart quide
+## Quickstart guide
+
+### Installation
+- Install Clipprs with - 
+    
+      npm install -g clipprs
+
 ### Add
   -  Add a new clip to your system with -
   

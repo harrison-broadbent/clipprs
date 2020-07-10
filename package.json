@@ -1,10 +1,10 @@
 {
   "name": "clipprs",
   "description": "CLI Personal Relations System",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "author": "Harrison Broadbent @harrison-broadbent",
   "bin": {
-    "cliprs": "./bin/run"
+    "clipprs": "./bin/run"
   },
   "bugs": {
     "url": "https://github.com/harrison-broadbent/clipprs/issues"
@@ -29,7 +29,7 @@
     "typescript": "^3.3"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">11.0.0"
   },
   "files": [
     "/bin",
@@ -41,14 +41,14 @@
   "keywords": [
     "oclif",
     "cli",
-    "pkm",
+    "pkm", 
     "knowledge-management"
   ],
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "cliprs",
+    "bin": "clipprs",
     "plugins": [
       "@oclif/plugin-help"
     ]

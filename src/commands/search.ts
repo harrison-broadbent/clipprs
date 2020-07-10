@@ -14,7 +14,7 @@ const Table = require('cli-table3')
 // initialize db
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('cliprs_db.json')
+const adapter = new FileSync('clipprs_db.json')
 const db = low(adapter)
 
 // setup defaults //
