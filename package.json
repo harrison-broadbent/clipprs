@@ -1,7 +1,7 @@
 {
   "name": "clipprs",
   "description": "CLI Personal Relations System",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Harrison Broadbent @harrison-broadbent",
   "bin": {
     "clipprs": "bin/run"
