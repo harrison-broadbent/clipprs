@@ -6,7 +6,7 @@ import {format} from 'path'
 
 const _ = require('lodash')
 const path = require('path')
-const defaults = require('../../config/settings.json')
+const defaults = require('./../../config/settings.json')
 const {Form, Select, Editable} = require('clipprs-enquirer')
 
 /// DATABASE ///

@@ -10,7 +10,7 @@ const {AutoComplete, Select, Form, Confirm, Editable} = require('clipprs-enquire
 const Table = require('cli-table3')
 const path = require('path')
 
-const defaults = require('../../config/settings.json')
+const defaults = require('./../../config/settings.json')
 
 /// DATABASE ///
 // initialize db

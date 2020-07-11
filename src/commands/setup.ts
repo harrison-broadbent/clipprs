@@ -5,7 +5,7 @@ import {format} from 'path'
 
 import fs = require('fs')
 const path = require('path')
-const defaults = require('../../config/settings.json')
+const defaults = require('./../../config/settings.json')
 
 const {Select, Input, NumberPrompt} = require('clipprs-enquirer')
 
