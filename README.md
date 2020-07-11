@@ -4,17 +4,17 @@
 
 ## Why?
 
+I built Clipprs to keep track of the little things that make up so much of the people we hold dear, and to help us all be better, less forgetful, and more compassionate friends. 
+
 Throughout our days, weeks, lives, we collect untold amounts of knowledge about the people we encounter. 
 
 Unfortunately, try as we might, we're not equipped to handle the sheer volume of information that comes our way, and so we tend to forget things about the people around us as time wears on. 
 
-Rather than try to battle with my own physiology, I have chosen to accept the limitations of my own brain and turn to a solution based on the technology I use every day. 
+Rather than try to battle my physiology, I've accepted my limitations and instead created a solution based on the technology I use daily. 
 
 While it may be a bit confronting at first to consider indexing information on the people around you, I believe that it can ultimately lead to you being a more considerate and compassionate friend to the people you care about. 
 
-With a few quick keystrokes, you can shield from the ravages of time all the little things that make up people you care about. Names, dates, places. Favorite colours, pet names, foods to avoid. All the little things that together, add up to form a key part of the people we share our lives with. 
-
-I built Clipprs to help us all keep track of the little things that make up so much of the people we hold dear. 
+With a few keystrokes, you can shield from the ravages of time your vast corpus of information on the people around you. Names, dates, places. Favourite colours, pet names, foods to avoid. All the little things that together, add up to form a key part of the people we share our lives with. 
 
 ## Quickstart guide
 
@@ -26,7 +26,7 @@ I built Clipprs to help us all keep track of the little things that make up so m
 ### Setup
   ![](./media/clipprs-setup.gif)
 
-  - This step is not necessary, but I highly recommend going through it to ensure your database file is backed up somewhere safe — especially as this project is still in it's infancy. 
+  - This step is not necessary, but I highly recommend going through it to ensure your database file is backed up somewhere safe — especially as this project is still in its infancy. 
 
   - Run - 
 
@@ -38,7 +38,7 @@ I built Clipprs to help us all keep track of the little things that make up so m
 
   - We are going to change the database file path from the default directory to one which is backed up. 
   
-  - For this, I personally use the [Google Drive](https://www.google.com/drive/download/) desktop application which keeps a folder on my local machine in sync with my Google Drive. There are many other providers (Dropbox, Mega etc.) which all have similar offerings. 
+  - For this, I use the [Google Drive](https://www.google.com/drive/download/) desktop application which keeps a folder on my local machine in sync with my Google Drive. There are many other providers (Dropbox, Mega etc.) which all have similar offerings. 
 
   - After selecting "Database File Path" you will be prompted to enter a new path to store the file, with the default path displayed. Only the path is required, the filename is automatically inserted - 
 
@@ -85,12 +85,12 @@ I built Clipprs to help us all keep track of the little things that make up so m
     │                │                │                │ lot.           │
     └────────────────┴────────────────┴────────────────┴────────────────┘
 
-  By default this will only show the four required fields, like above. 
+  By default, this will only show the four required fields, like above. 
   You can view all the fields within your database of clips by passing the -a flag - 
 
     > clipprs view -a
 
-  This will attempt to show you the the value of each entry for all the fields in your database, with blanks used to show an undefined field, ie - 
+  This will attempt to show you the value of each entry for all the fields in your database, with blanks used to show an undefined field, ie - 
 
       ┌────────────────┬────────────────┬────────────────┬────────────────┬────────────────┐
       │ First Name     │ Last Name      │ Birthday       │ Bio            │ Favourite      │
