@@ -3,18 +3,19 @@ import {Command, flags} from '@oclif/command'
 import {integer} from '@oclif/command/lib/flags'
 import {format} from 'path'
 
+const path = require('path')
+const defaults = require('./../../config/settings.json')
 const {Confirm} = require('clipprs-enquirer')
 
 /// DATABASE ///
 // initialize db
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('clipprs_db.json')
+const adapter = new FileSync(path.join(defaults.db.path, defaults.db.filename))
 const db = low(adapter)
 
 // setup defaults //
-const defaults = {people: [], count: 0}
-db.defaults(defaults)
+db.defaults(defaults.db.defaults)
 .write()
 /// \DATABASE ///
 
