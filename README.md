@@ -30,7 +30,7 @@
         · /Users/harrisonbroadbent/Google Drive/life/clipprs
         Updated path to /Users/harrisonbroadbent/Google Drive/life/clipprs
 
-  - This will keep the clipprs_db.json file backed up, and will also allow you to work across different machines by pointing all your clipprs instances at the db file. 
+  - This will keep the clipprs_db.json file backed up, and will also allow you to work across different machines by pointing all your Clipprs instances at the db file. 
 
 ### Add
   -  Add a new clip to your system with -
