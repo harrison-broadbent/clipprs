@@ -3,9 +3,21 @@ import {Command, flags} from '@oclif/command'
 import {DEFAULT_TEMPLATE_PERSON} from '../templates'
 import {integer} from '@oclif/command/lib/flags'
 
-import {requiredFields, columnWidth, defaultMaxColumns} from '../definitions'
-
 const Table = require('cli-table3')
+const path = require('path')
+const defaults = require('../../config/settings.json')
+
+/// DATABASE ///
+// initialize db
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync(path.join(defaults.db.path, defaults.db.filename))
+const db = low(adapter)
+
+// setup defaults //
+db.defaults(defaults.db.defaults)
+.write()
+/// \DATABASE ///
 
 export default class View extends Command {
   static description = 'View all your Clips'
@@ -18,19 +30,6 @@ export default class View extends Command {
   // static args = []
 
   async run() {
-    /// / DATABASE ////
-    // initialize db
-    const low = require('lowdb')
-    const FileSync = require('lowdb/adapters/FileSync')
-    const adapter = new FileSync('clipprs_db.json')
-    const db = low(adapter)
-
-    // setup defaults //
-    db.defaults({people: [], count: 0})
-    .write()
-
-    /// \DATABASE ///
-
     const {flags} = this.parse(View)
 
     const dbData = db.get('people')
@@ -44,7 +43,7 @@ export default class View extends Command {
     if (flags.all) {
       // we still limit the number of columns otherwise we risk ugly wrapping.
       // Within search we can view them ALL.
-      const max_columns = Math.floor((process.stdout.columns || defaultMaxColumns) / columnWidth)
+      const max_columns = Math.floor((process.stdout.columns || defaults.view.maxColumns) / defaults.view.columnWidth)
       // Auto-generate the table by going through every person and adding their keys in
       for (const person of dbData) {
         headValues = headValues.concat(Object.keys(person))
@@ -57,9 +56,9 @@ export default class View extends Command {
       }
       headValues = [...(new Set(headValues))].slice(0, max_columns)
     } else {
-      headValues = requiredFields
+      headValues = defaults.requiredFields
     }
-    const columnWidths = new Array(headValues.length).fill(columnWidth)
+    const columnWidths = new Array(headValues.length).fill(defaults.view.columnWidth)
     const table = new Table({head: headValues, wordWrap: true, colWidths: columnWidths})
 
     if (dbData.length > 0) {
@@ -77,7 +76,7 @@ export default class View extends Command {
       }
     } else {
       table.push([])
-      this.log('No data found. Run clipprs new to add a clip, or clipprs setup to link to an older database.')
+      this.log('No data found.\nRun *clipprs new* to add a clip, or *clipprs setup* to link to an older database.')
     }
     this.log(table.toString())
   }

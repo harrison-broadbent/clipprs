@@ -4,19 +4,20 @@ import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 import {integer} from '@oclif/command/lib/flags'
 import {format} from 'path'
 
-import {requiredFields} from '../definitions'
-
+const _ = require('lodash')
+const path = require('path')
+const defaults = require('../../config/settings.json')
 const {Form, Select, Editable} = require('clipprs-enquirer')
 
 /// DATABASE ///
 // initialize db
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('clipprs_db.json')
+const adapter = new FileSync(path.join(defaults.db.path, defaults.db.filename))
 const db = low(adapter)
 
 // setup defaults //
-db.defaults({people: [], count: 0})
+db.defaults(defaults.db.defaults)
 .write()
 /// \DATABASE ///
 
@@ -27,18 +28,16 @@ const newPersonPrompt = new Editable({
   choices: () => {
     const prompt_choices = []
     for (const key of Object.keys(DEFAULT_TEMPLATE_PERSON)) {
-      const promptTemplate = JSON.parse(JSON.stringify(PROMPT_TEMPLATE))
+      const promptTemplate = _.cloneDeep(PROMPT_TEMPLATE)
       promptTemplate.name = key
       promptTemplate.message = key
-      promptTemplate.required = requiredFields.includes(key)
+      promptTemplate.required = defaults.requiredFields.includes(key)
       prompt_choices.push(promptTemplate)
     }
     // prompt_choices.push(BLANK_INPUT_TEMPLATE)
     return prompt_choices
   },
 })
-// import {DB_PATH} from '../definitions'
-// const fs = require('fs')
 
 export default class New extends Command {
   static description = 'Clip a new person into your system'

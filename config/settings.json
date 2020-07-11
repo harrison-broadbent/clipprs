@@ -1,0 +1,20 @@
+{
+  "db": {
+    "path": "./",
+    "filename": "clipprs_db.json",
+    "defaults": {
+      "people": [],
+      "count": 0
+    }
+  },
+  "view": {
+    "columnWidth": 16,
+    "maxColumns": 12
+  },
+  "requiredFields": [
+    "First Name",
+    "Last Name",
+    "Birthday",
+    "Bio"
+  ]
+}

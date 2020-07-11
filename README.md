@@ -1,5 +1,4 @@
 # Clipprs - CLI Personal Relations System
-  - this is not ready for an initial release yet!
 
 ## Quickstart guide
 
@@ -7,6 +6,31 @@
 - Install Clipprs with - 
     
       npm install -g clipprs
+
+### Setup
+  - This step is not necessary, but I highly recommend going through it to ensure your database file is backed up somewhere safe — especially as this project is still in it's infancy. 
+  - Run - 
+
+        clipprs setup
+
+        ? What would you like to change? … 
+        ❯ Database File Path
+          Table Column Widths
+
+  - We are going to change the database file path from the default directory to one which is backed up. 
+  
+  - For this, I personally use the [Google Drive](https://www.google.com/drive/download/) desktop application which keeps a folder on my local machine in sync with my Google Drive. There are many other providers (Dropbox, Mega etc.) which all have similar offerings. 
+
+  - After selecting "Database File Path" you will be prompted to enter a new path to store the file, with the default path displayed. Only the path is required, the filename is automatically inserted - 
+
+        ✔ What would you like to change? · Database File Path
+        ? Enter a new location to save the database file (TAB to autocomplete)
+        › /Users/harrisonbroadbent/Documents/projects/clipprs
+
+        · /Users/harrisonbroadbent/Google Drive/life/clipprs
+        Updated path to /Users/harrisonbroadbent/Google Drive/life/clipprs
+
+  - 
 
 ### Add
   -  Add a new clip to your system with -

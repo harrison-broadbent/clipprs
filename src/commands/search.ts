@@ -4,23 +4,25 @@ import {integer, string} from '@oclif/command/lib/flags'
 import {format} from 'path'
 import {Interface} from 'readline'
 
-import {requiredFields, columnWidth, defaultMaxColumns} from '../definitions'
 import {DEFAULT_TEMPLATE_PERSON, PROMPT_TEMPLATE} from '../templates'
 
 const {AutoComplete, Select, Form, Confirm, Editable} = require('clipprs-enquirer')
 const Table = require('cli-table3')
+const path = require('path')
+
+const defaults = require('../../config/settings.json')
 
 /// DATABASE ///
 // initialize db
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('clipprs_db.json')
+const adapter = new FileSync(path.join(defaults.db.path, defaults.db.filename))
 const db = low(adapter)
 
 // setup defaults //
-db.defaults({people: [], count: 0})
+db.defaults(defaults.db.defaults)
 .write()
-/// DATABASE ///
+/// \DATABASE ///
 
 function editPerson(entry: object) {
   interface Field {
@@ -43,7 +45,7 @@ function editPerson(entry: object) {
           message: key,
           initial: entry[key],
           editable: true,
-          required: requiredFields.includes(key),
+          required: defaults.requiredFields.includes(key),
         }
         prompt_choices.push(field)
       }
@@ -52,7 +54,6 @@ function editPerson(entry: object) {
   })
   editPersonPrompt.run()
   .then((editedEntry: object) => {
-    console.log(editedEntry)
     db.get('people')
     .remove(entry)
     .write()
@@ -60,10 +61,6 @@ function editPerson(entry: object) {
     db.get('people')
     .push(editedEntry)
     .write()
-    // db.get('people')
-    // .find(entry)
-    // .assign(editedEntry)
-    // .write()
   })
 }
 
@@ -120,6 +117,7 @@ export default class New extends Command {
         // VIEW
         if (answer === 'View') {
           // widen colWidth as we are only displaying 2 colums
+          const columnWidth = defaults.view.columnWidth
           const table = new Table({wordWrap: true, colWidths: [columnWidth * 1.5, columnWidth * 1.5]})
           const keys = Object.keys(entry)
 
@@ -133,6 +131,7 @@ export default class New extends Command {
         // EDIT
         } else if (answer === 'Edit') {
           editPerson(entry)
+          this.log('Edits successfully saved.')
         // DELETE
         } else if (answer === 'Delete') {
           confirmDeletePrompt.run()
