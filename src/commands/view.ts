@@ -50,11 +50,11 @@ export default class View extends Command {
       }
       // remove duplicates by using the Set() type
       // and then converting back to array
+      headValues = [...(new Set(headValues))].slice(0, max_columns)
       if (max_columns < headValues.length) {
         // we couldn't show all the information as there was too much
         this.log(`\n  Could only display ${max_columns}/${headValues.length} fields due to the terminal width.\n\n  To view more information, widen your terminal window \n  OR use the *View* option within the *search* command.`)
       }
-      headValues = [...(new Set(headValues))].slice(0, max_columns)
     } else {
       headValues = defaults.requiredFields
     }
