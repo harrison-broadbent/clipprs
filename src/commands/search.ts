@@ -103,6 +103,7 @@ export default class New extends Command {
   // first we search through all our entries
   // then, we allow the user to edit or delete the entry
   async run() {
+    this.log(`${defaults.startupMessage} | ${defaults.version}`)
     searchPrompt.run()
     .then((answer: string) => {
       const dbData = db.get('people').value()

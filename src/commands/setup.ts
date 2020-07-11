@@ -68,6 +68,7 @@ export default class Setup extends Command {
   static description = 'Change settings for Clipprs - '
 
   async run() {
+    this.log(`${defaults.startupMessage} | ${defaults.version}`)
     setupPrompt.run()
     .then((answer: string) => {
       if (answer === 'Database File Path') {

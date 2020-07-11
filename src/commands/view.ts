@@ -30,6 +30,7 @@ export default class View extends Command {
   // static args = []
 
   async run() {
+    this.log(`${defaults.startupMessage} | ${defaults.version}`)
     const {flags} = this.parse(View)
 
     const dbData = db.get('people')

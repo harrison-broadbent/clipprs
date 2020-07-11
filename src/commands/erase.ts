@@ -33,6 +33,7 @@ export default class New extends Command {
   static description = 'Erase all your clips'
 
   async run() {
+    this.log(`${defaults.startupMessage} | ${defaults.version}`)
     confirmErasePrompt.run()
     .then((confirm: boolean) => {
       if (confirm) {

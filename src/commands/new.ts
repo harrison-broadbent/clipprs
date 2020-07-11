@@ -59,6 +59,7 @@ export default class New extends Command {
   }
 
   async run() {
+    this.log(`${defaults.startupMessage} | ${defaults.version}`)
     newPersonPrompt.run()
     .then((newPersonObject: object) => {
       db.get('people')
