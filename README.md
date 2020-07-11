@@ -1,4 +1,20 @@
-# Clipprs - CLI Personal Relations System
+# Clipprs ✂️ - CLI Personal Relations System
+
+![](./media/clipprs-new.gif)
+
+## Why?
+
+Throughout our days, weeks, lives, we collect untold amounts of knowledge about the people we encounter. 
+
+Unfortunately, try as we might, we're not equipped to handle the sheer volume of information that comes our way, and so we tend to forget things about the people around us as time wears on. 
+
+Rather than try to battle with my own physiology, I have chosen to accept the limitations of my own brain and turn to a solution based on the technology I use every day. 
+
+While it may be a bit confronting at first to consider indexing information on the people around you, I believe that it can ultimately lead to you being a more considerate and compassionate friend to the people you care about. 
+
+With a few quick keystrokes, you can shield from the ravages of time all the little things that make up people you care about. Names, dates, places. Favorite colours, pet names, foods to avoid. All the little things that together, add up to form a key part of the people we share our lives with. 
+
+I built Clipprs to help us all keep track of the little things that make up so much of the people we hold dear. 
 
 ## Quickstart guide
 
@@ -8,7 +24,10 @@
       npm install -g clipprs
 
 ### Setup
+  ![](./media/clipprs-setup.gif)
+
   - This step is not necessary, but I highly recommend going through it to ensure your database file is backed up somewhere safe — especially as this project is still in it's infancy. 
+
   - Run - 
 
         clipprs setup
@@ -48,6 +67,7 @@
   Note that the four initial fields are required and cannot be removed. 
 
 ### View
+
   -  View all your clips with -
   
     > clipprs view
@@ -91,6 +111,9 @@
   All the fields for a given entry can be viewed by searching for an entry and then viewing it, as discussed in the following section. 
 
 ### Search
+
+  ![](./media/clipprs-search-and-edit.gif)
+
   -  Search, Edit, View and Delete your clips -
   
     > clipprs search
@@ -111,6 +134,8 @@
   - **Edit**: Allows you to edit the entry, add and remove fields etc.
   - **Delete**: Deletes an entry after confirmation.
   - **Close**: Closes the dialogue.
+
+  ![](./media/clipprs-full-view.gif)
 
 ### Erase
   - You can erase your database of clips using - 
