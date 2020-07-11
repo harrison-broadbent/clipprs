@@ -22,7 +22,10 @@ db.defaults(defaults.db.defaults)
 /// \DATABASE ///
 
 function updateConfig(content: object) {
-  fs.writeFileSync('./config/settings.json', JSON.stringify(content, null, 2))
+  fs.writeFileSync(
+    path.join(__dirname, '..', '..', 'config', 'settings.json'),
+    JSON.stringify(content, null, 2)
+  )
 }
 
 const setupPrompt = new Select({
