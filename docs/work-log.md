@@ -1,4 +1,23 @@
+--- 2020-07-12 15:56 ---
+	- created a logo and some assets.
+	- next step is to learn some React for the GUI. 
+		- mobile + desktop, hopefully can simply go -
+
+			React --> React Native 	(Mobile)
+						\-> Electron			(Desktop)
+
+			and then I can maximize code-reuse. 
+	- Also think I might ask toby if he wants to help bc. having a hand would be sweet!
+	- Also thinking about auth and storing data. 
+		- I imagine that eventually I would want ppl to login with google etc. and therefore something like Firebase could be good. 
+
+
 --- 2020-07-11 ---
+	--- 20:51 ---
+		- feel like I haven't done too much today even though i've spent most of the day working on clipprs, it's mostly just been fixing and cleaning etc. though. 
+		- i'm pleased with the state of the cli app, and now i'm thinking of implementing a gui using electron. 
+		* if memory size is an issue, stop storing JSON with all the padding
+
 	--- 14:14 ---
 		- implemented a settings file.
 		- can now run clipprs setup and edit a few settings.

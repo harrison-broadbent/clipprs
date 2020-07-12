@@ -1,7 +1,21 @@
 # Clipprs ✂️ - CLI Personal Relations System
 
-![](./media/clipprs-new.gif)
+![](./media/images/clipprs-logo-small.png)
 
+
+[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) 
+[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com) 
+
+![](https://img.shields.io/npm/dt/clipprs)
+![](https://img.shields.io/github/stars/harrison-broadbent/clipprs?style=flat) 
+![](https://img.shields.io/npm/v/clipprs)
+![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fharrison-broadbent%252Fclipprs%26via%3Dhrrsnbbnt%26text%3DJust%2520checked%2520out%2520Clipprs%2520%25u2702%25uFE0F%252C%2520a%2520tool%2520to%2520help%2520you%2520remember%2520the%2520little%2520things%2520about%2520the%2520people%2520you%2520meet%2521%26hashtags%3D%2523node%2520%2523clipprs%2520%2523npm) 
+![](https://img.shields.io/twitter/follow/hrrsnbbnt?label=Follow&style=social)
+
+![](./media/gifs/clipprs-new.gif)
+
+x
 ## Why?
 
 I built Clipprs to keep track of the little things that make up so much of the people we hold dear, and to help us all be better, less forgetful, and more compassionate friends. 
@@ -24,7 +38,7 @@ With a few keystrokes, you can shield from the ravages of time your vast corpus 
       npm install -g clipprs
 
 ### Setup
-  ![](./media/clipprs-setup.gif)
+  ![](./media/gifs/clipprs-setup.gif)
 
   - This step is not necessary, but I highly recommend going through it to ensure your database file is backed up somewhere safe — especially as this project is still in its infancy. 
 
@@ -112,7 +126,7 @@ With a few keystrokes, you can shield from the ravages of time your vast corpus 
 
 ### Search
 
-  ![](./media/clipprs-search-and-edit.gif)
+  ![](./media/gifs/clipprs-search-and-edit.gif)
 
   -  Search, Edit, View and Delete your clips -
   
@@ -135,7 +149,7 @@ With a few keystrokes, you can shield from the ravages of time your vast corpus 
   - **Delete**: Deletes an entry after confirmation.
   - **Close**: Closes the dialogue.
 
-  ![](./media/clipprs-full-view.gif)
+  ![](./media/gifs/clipprs-full-view.gif)
 
 ### Erase
   - You can erase your database of clips using - 
