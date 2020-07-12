@@ -3,9 +3,9 @@
 ![](./media/images/clipprs-logo-small.png)
 
 
-[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) 
-[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com) 
+[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)]()
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)]() 
+[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)]() 
 
 ![](https://img.shields.io/npm/dt/clipprs)
 ![](https://img.shields.io/github/stars/harrison-broadbent/clipprs?style=flat) 
