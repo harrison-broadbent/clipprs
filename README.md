@@ -18,17 +18,15 @@
 x
 ## Why?
 
-I built Clipprs to keep track of the little things that make up so much of the people we hold dear, and to help us all be better, less forgetful, and more compassionate friends. 
+I built Clipprs to keep track of the little things that make up so much of the people we care about, and to help us all be better, less forgetful, and more compassionate friends. 
 
-Throughout our days, weeks, lives, we collect untold amounts of knowledge about the people we encounter. 
+Throughout our lives we collect untold amounts of knowledge about the people we encounter. 
 
-Unfortunately, try as we might, we're not equipped to handle the sheer volume of information that comes our way, and so we tend to forget things about the people around us as time wears on. 
+Try as we might, we're not equipped to handle the sheer volume of information that comes our way, and so we find ourselves forgetting lots of the little details that we encounter. 
 
-Rather than try to battle my physiology, I've accepted my limitations and instead created a solution based on the technology I use daily. 
+Rather than try to battle against this, I've tried to accept this and build a tool to help me keep track of these details, without relying solely on my memory. 
 
-While it may be a bit confronting at first to consider indexing information on the people around you, I believe that it can ultimately lead to you being a more considerate and compassionate friend to the people you care about. 
-
-With a few keystrokes, you can shield from the ravages of time your vast corpus of information on the people around you. Names, dates, places. Favourite colours, pet names, foods to avoid. All the little things that together, add up to form a key part of the people we share our lives with. 
+While it may be a bit confronting at first to consider indexing information on the people around you, I believe it can help you to be more considerate and compassionate to the people you care about. 
 
 ## Quickstart guide
 
